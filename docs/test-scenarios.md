@@ -1,21 +1,114 @@
 # Practice Software Testing Toolshop
-# Test Scenarios
 
-## Purpose
+# Requirements Specification
 
-These scenarios provide high-level coverage between requirements and detailed test cases.
+## 1. Purpose
 
-Each scenario should answer:
+This document converts observable application behavior and explicitly proposed testable behavior into a structured requirements baseline for the QA project.
 
-> **What behavior or quality characteristic are we validating?**
+The project deliberately distinguishes:
 
-Detailed execution steps belong in `test-cases.xlsx`.
+- **Observed** — directly verified from the current application or its current public documentation.
+- **Proposed / To Verify** — a reasonable testable requirement that must be verified during execution before being treated as confirmed application behavior.
+- **Observed / To Verify** — part of the behavior is observable, but the complete behavior still requires execution.
 
-## Scenario Catalog
+The current Toolshop registration page exposes first name, last name, date of birth, country, postal code, house number, street, city, state, phone, email and password inputs. It also documents password rules: minimum 8 characters, uppercase and lowercase letters, a number, and a special symbol.
 
-| Scenario ID | Requirement ID | Module | Scenario |
-|---|---|---|---|
-| TS-AUTH-001 | REQ-AUTH-001 | Authentication | Verify login page and authentication entry point. |\n| TS-AUTH-002 | REQ-AUTH-002 | Authentication | Verify authentication with valid registered credentials. |\n| TS-AUTH-003 | REQ-AUTH-003 | Authentication | Verify authentication with invalid credentials. |\n| TS-AUTH-004 | REQ-AUTH-004 | Authentication | Verify required-field validation on login. |\n| TS-AUTH-005 | REQ-AUTH-005 | Authentication | Verify logout and transition out of authenticated state. |\n| TS-AUTH-006 | REQ-AUTH-006 | Authentication | Verify session behavior during navigation and after logout. |\n| TS-AUTH-007 | REQ-AUTH-007 | Authentication | Verify unsuccessful-login feedback. |\n| TS-REG-001 | REQ-REG-001 | Registration | Verify registration form availability and field presence. |\n| TS-REG-002 | REQ-REG-002 | Registration | Verify first-name input. |\n| TS-REG-003 | REQ-REG-003 | Registration | Verify last-name input. |\n| TS-REG-004 | REQ-REG-004 | Registration | Verify date-of-birth input and format handling. |\n| TS-REG-005 | REQ-REG-005 | Registration | Verify country selection. |\n| TS-REG-006 | REQ-REG-006 | Registration | Verify postal code and house number. |\n| TS-REG-007 | REQ-REG-007 | Registration | Verify street, city and state fields. |\n| TS-REG-008 | REQ-REG-008 | Registration | Verify phone number input. |\n| TS-REG-009 | REQ-REG-009 | Registration | Verify email input. |\n| TS-REG-010 | REQ-REG-010 | Registration | Verify documented password rules. |\n| TS-REG-011 | REQ-REG-011 | Registration | Verify invalid and incomplete registration submissions. |\n| TS-REG-012 | REQ-REG-012 | Registration | Verify duplicate-account handling. |\n| TS-REG-013 | REQ-REG-013 | Registration | Verify registration validation feedback. |\n| TS-REG-014 | REQ-REG-014 | Registration | Verify country/address relationship where applicable. |\n| TS-PROD-001 | REQ-PROD-001 | Products | Verify product listing displays available products. |\n| TS-PROD-002 | REQ-PROD-002 | Products | Verify product details page/content. |\n| TS-PROD-003 | REQ-PROD-003 | Products | Verify product discovery/navigation. |\n| TS-PROD-004 | REQ-PROD-004 | Products | Verify price consistency between product views. |\n| TS-PROD-005 | REQ-PROD-005 | Products | Verify stock/availability representation. |\n| TS-PROD-006 | REQ-PROD-006 | Products | Verify product image display. |\n| TS-PROD-007 | REQ-PROD-007 | Products | Verify product description display. |\n| TS-PROD-008 | REQ-PROD-008 | Products | Verify navigation from listing to product details. |\n| TS-SEARCH-001 | REQ-SEARCH-001 | Search | Verify search control and search workflow. |\n| TS-SEARCH-002 | REQ-SEARCH-002 | Search | Verify search for a matching product/term. |\n| TS-SEARCH-003 | REQ-SEARCH-003 | Search | Verify no-result search behavior. |\n| TS-SEARCH-004 | REQ-SEARCH-004 | Search | Verify empty search behavior. |\n| TS-SEARCH-005 | REQ-SEARCH-005 | Search | Verify whitespace handling. |\n| TS-SEARCH-006 | REQ-SEARCH-006 | Search | Verify case variation handling where applicable. |\n| TS-CAT-001 | REQ-CAT-001 | Categories | Verify category navigation. |\n| TS-CAT-002 | REQ-CAT-002 | Categories | Verify products displayed after category selection. |\n| TS-CAT-003 | REQ-CAT-003 | Categories | Verify category result relevance. |\n| TS-FILTER-001 | REQ-FILTER-001 | Filters | Verify available filter controls. |\n| TS-FILTER-002 | REQ-FILTER-002 | Filters | Verify individual filter application. |\n| TS-FILTER-003 | REQ-FILTER-003 | Filters | Verify combined filters where supported. |\n| TS-FILTER-004 | REQ-FILTER-004 | Filters | Verify clearing filters. |\n| TS-SORT-001 | REQ-SORT-001 | Sorting | Verify available sorting options. |\n| TS-SORT-002 | REQ-SORT-002 | Sorting | Verify result order for a selected sort. |\n| TS-SORT-003 | REQ-SORT-003 | Sorting | Verify changing sorting order. |\n| TS-CART-001 | REQ-CART-001 | Cart | Verify adding a product to cart. |\n| TS-CART-002 | REQ-CART-002 | Cart | Verify cart contents after adding a product. |\n| TS-CART-003 | REQ-CART-003 | Cart | Verify removing a product. |\n| TS-CART-004 | REQ-CART-004 | Cart | Verify quantity modification. |\n| TS-CART-005 | REQ-CART-005 | Cart | Verify item and order total calculation. |\n| TS-CART-006 | REQ-CART-006 | Cart | Verify cart with multiple products. |\n| TS-CART-007 | REQ-CART-007 | Cart | Verify empty-cart behavior. |\n| TS-CART-008 | REQ-CART-008 | Cart | Verify cart persistence/navigation behavior. |\n| TS-CHECKOUT-001 | REQ-CHECKOUT-001 | Checkout | Verify checkout initiation. |\n| TS-CHECKOUT-002 | REQ-CHECKOUT-002 | Checkout | Verify required customer-field validation. |\n| TS-CHECKOUT-003 | REQ-CHECKOUT-003 | Checkout | Verify address validation. |\n| TS-CHECKOUT-004 | REQ-CHECKOUT-004 | Checkout | Verify order summary. |\n| TS-CHECKOUT-005 | REQ-CHECKOUT-005 | Checkout | Verify checkout total. |\n| TS-CHECKOUT-006 | REQ-CHECKOUT-006 | Checkout | Verify unsuccessful checkout handling. |\n| TS-CHECKOUT-007 | REQ-CHECKOUT-007 | Checkout | Verify successful order creation. |\n| TS-CHECKOUT-008 | REQ-CHECKOUT-008 | Checkout | Verify payment validation where supported. |\n| TS-ACCOUNT-001 | REQ-ACCOUNT-001 | Account | Verify access to supported account functionality. |\n| TS-ACCOUNT-002 | REQ-ACCOUNT-002 | Account | Verify profile information display. |\n| TS-ACCOUNT-003 | REQ-ACCOUNT-003 | Account | Verify profile updates where supported. |\n| TS-ORDER-001 | REQ-ORDER-001 | Orders | Verify order history. |\n| TS-ORDER-002 | REQ-ORDER-002 | Orders | Verify order details. |\n| TS-ORDER-003 | REQ-ORDER-003 | Orders | Verify order data consistency. |\n| TS-NFR-001 | REQ-NFR-001 | Non-functional | Verify navigation usability across core workflows. |\n| TS-NFR-002 | REQ-NFR-002 | Non-functional | Verify core workflow usability at supported viewport sizes. |\n| TS-NFR-003 | REQ-NFR-003 | Non-functional | Verify core workflows across supported browsers. |\n| TS-NFR-004 | REQ-NFR-004 | Non-functional | Verify clarity of validation feedback. |\n| TS-NFR-005 | REQ-NFR-005 | Non-functional | Verify basic accessible naming/labeling of controls. |\n| TS-NFR-006 | REQ-NFR-006 | Non-functional | Verify safe handling of inappropriate input. |\n
+The application is a demonstration application for software-testing training.
+
+## 2. Requirement Catalog
+
+| Requirement ID | Module | Requirement | Evidence Status | Risk |
+|---|---|---|---|---|
+| REQ-AUTH-001 | Authentication | The application should provide a customer authentication mechanism. | Proposed / To Verify | High |
+| REQ-AUTH-002 | Authentication | Registered customers should be able to authenticate using valid credentials. | Proposed / To Verify | High |
+| REQ-AUTH-003 | Authentication | The application should reject invalid authentication credentials. | Proposed / To Verify | High |
+| REQ-AUTH-004 | Authentication | Authentication fields should validate required input. | Proposed / To Verify | High |
+| REQ-AUTH-005 | Authentication | An authenticated customer should be able to log out where logout is available. | Proposed / To Verify | High |
+| REQ-AUTH-006 | Authentication | The application should handle authenticated session state consistently across relevant navigation. | Proposed / To Verify | High |
+| REQ-AUTH-007 | Authentication | Authentication should provide appropriate feedback for unsuccessful login attempts. | Proposed / To Verify | Medium |
+| REQ-REG-001 | Registration | The registration page should provide the fields required for customer registration. | Observed | High |
+| REQ-REG-002 | Registration | Registration should collect first name. | Observed | Medium |
+| REQ-REG-003 | Registration | Registration should collect last name. | Observed | Medium |
+| REQ-REG-004 | Registration | Registration should collect date of birth. | Observed | Medium |
+| REQ-REG-005 | Registration | Registration should provide country selection. | Observed | Medium |
+| REQ-REG-006 | Registration | Registration should collect postal code and house number. | Observed | Medium |
+| REQ-REG-007 | Registration | Registration should collect street, city and state information. | Observed | Medium |
+| REQ-REG-008 | Registration | Registration should collect phone number. | Observed | Medium |
+| REQ-REG-009 | Registration | Registration should collect an email address. | Observed | High |
+| REQ-REG-010 | Registration | Registration password should be at least 8 characters and contain uppercase, lowercase, a number and a special symbol. | Observed | High |
+| REQ-REG-011 | Registration | Registration should reject invalid or incomplete registration data. | Proposed / To Verify | High |
+| REQ-REG-012 | Registration | The application should handle duplicate-account registration appropriately. | Proposed / To Verify | High |
+| REQ-REG-013 | Registration | Registration should provide understandable validation feedback. | Proposed / To Verify | Medium |
+| REQ-REG-014 | Registration | Country selection should support the address fields associated with the selected country where applicable. | Observed / To Verify | Medium |
+| REQ-PROD-001 | Products | The application should display available products. | Observed / To Verify | High |
+| REQ-PROD-002 | Products | A product should expose its available details to the customer. | Proposed / To Verify | High |
+| REQ-PROD-003 | Products | Product listing should allow customers to discover available products. | Proposed / To Verify | High |
+| REQ-PROD-004 | Products | Product price displayed in relevant views should be consistent. | Proposed / To Verify | High |
+| REQ-PROD-005 | Products | Product availability or stock state should be represented where provided. | Proposed / To Verify | Medium |
+| REQ-PROD-006 | Products | Product images should be displayed where available. | Proposed / To Verify | Low |
+| REQ-PROD-007 | Products | Product descriptions should be displayed where available. | Proposed / To Verify | Medium |
+| REQ-PROD-008 | Products | Selecting a product should open the corresponding product details where supported. | Proposed / To Verify | High |
+| REQ-SEARCH-001 | Search | The application should provide product search functionality where available. | Proposed / To Verify | High |
+| REQ-SEARCH-002 | Search | A search for an existing product or matching term should return relevant results. | Proposed / To Verify | High |
+| REQ-SEARCH-003 | Search | A search with no matching result should be handled appropriately. | Proposed / To Verify | Medium |
+| REQ-SEARCH-004 | Search | Search should handle empty input appropriately. | Proposed / To Verify | Medium |
+| REQ-SEARCH-005 | Search | Search should handle leading, trailing or repeated whitespace appropriately. | Proposed / To Verify | Low |
+| REQ-SEARCH-006 | Search | Search should handle case variations consistently where search is case-insensitive. | Proposed / To Verify | Low |
+| REQ-CAT-001 | Categories | Customers should be able to browse products by available categories. | Proposed / To Verify | High |
+| REQ-CAT-002 | Categories | Selecting a category should display products associated with that category. | Proposed / To Verify | High |
+| REQ-CAT-003 | Categories | Category navigation should not expose products unrelated to the selected category unless the application explicitly supports that behavior. | Proposed / To Verify | Medium |
+| REQ-FILTER-001 | Filters | Customers should be able to use available product filters. | Proposed / To Verify | Medium |
+| REQ-FILTER-002 | Filters | Applying a filter should update displayed results according to the selected criterion. | Proposed / To Verify | Medium |
+| REQ-FILTER-003 | Filters | Multiple filters should behave consistently where combined filtering is supported. | Proposed / To Verify | Medium |
+| REQ-FILTER-004 | Filters | Customers should be able to clear an applied filter where the control is available. | Proposed / To Verify | Low |
+| REQ-SORT-001 | Sorting | Customers should be able to use available product sorting options. | Proposed / To Verify | Medium |
+| REQ-SORT-002 | Sorting | Products should be ordered according to the selected sorting criterion. | Proposed / To Verify | Medium |
+| REQ-SORT-003 | Sorting | Changing the sorting option should update the displayed ordering appropriately. | Proposed / To Verify | Low |
+| REQ-CART-001 | Cart | Customers should be able to add an available product to the cart. | Proposed / To Verify | High |
+| REQ-CART-002 | Cart | The cart should display products added by the customer. | Proposed / To Verify | High |
+| REQ-CART-003 | Cart | Customers should be able to remove products from the cart. | Proposed / To Verify | High |
+| REQ-CART-004 | Cart | Customers should be able to change product quantity where quantity modification is supported. | Proposed / To Verify | High |
+| REQ-CART-005 | Cart | The cart should calculate applicable item and order totals correctly. | Proposed / To Verify | High |
+| REQ-CART-006 | Cart | The cart should support multiple products where supported. | Proposed / To Verify | Medium |
+| REQ-CART-007 | Cart | The application should handle an empty cart appropriately. | Proposed / To Verify | Medium |
+| REQ-CART-008 | Cart | Cart state should behave consistently when navigating away and returning, according to the application's supported persistence behavior. | Proposed / To Verify | Medium |
+| REQ-CHECKOUT-001 | Checkout | Customers should be able to initiate checkout from the cart where checkout is available. | Proposed / To Verify | Critical |
+| REQ-CHECKOUT-002 | Checkout | Checkout should validate required customer information. | Proposed / To Verify | High |
+| REQ-CHECKOUT-003 | Checkout | Checkout should validate applicable address information. | Proposed / To Verify | High |
+| REQ-CHECKOUT-004 | Checkout | Checkout should display an order summary before order submission where applicable. | Proposed / To Verify | High |
+| REQ-CHECKOUT-005 | Checkout | Checkout should calculate and display the applicable order total. | Proposed / To Verify | Critical |
+| REQ-CHECKOUT-006 | Checkout | The application should handle unsuccessful checkout attempts appropriately. | Proposed / To Verify | High |
+| REQ-CHECKOUT-007 | Checkout | A successful checkout should create an order where order creation is supported. | Proposed / To Verify | Critical |
+| REQ-CHECKOUT-008 | Checkout | The payment workflow should validate required payment information where payment is supported. | Proposed / To Verify | Critical |
+| REQ-ACCOUNT-001 | Account | Authenticated customers should be able to access supported account functionality. | Proposed / To Verify | Medium |
+| REQ-ACCOUNT-002 | Account | Customers should be able to view supported profile information. | Proposed / To Verify | Medium |
+| REQ-ACCOUNT-003 | Account | Customers should be able to update supported profile information. | Proposed / To Verify | Medium |
+| REQ-ORDER-001 | Orders | Customers should be able to access order history where supported. | Proposed / To Verify | High |
+| REQ-ORDER-002 | Orders | Customers should be able to view relevant details for an order where supported. | Proposed / To Verify | High |
+| REQ-ORDER-003 | Orders | Order information should remain consistent with the submitted order details. | Proposed / To Verify | High |
+| REQ-NFR-001 | Non-functional | Core workflows should provide usable navigation. | Proposed / To Verify | Medium |
+| REQ-NFR-002 | Non-functional | Core workflows should remain usable at supported viewport sizes. | Proposed / To Verify | Medium |
+| REQ-NFR-003 | Non-functional | Core workflows should operate across supported browsers. | Proposed / To Verify | Medium |
+| REQ-NFR-004 | Non-functional | Validation messages should be understandable to users. | Proposed / To Verify | Low |
+| REQ-NFR-005 | Non-functional | Interactive form controls should expose appropriate accessible names or labels where applicable. | Proposed / To Verify | Medium |
+| REQ-NFR-006 | Non-functional | User-input fields should safely handle inappropriate input according to their intended data type. | Proposed / To Verify | Medium |
+
+## 3. Requirement Interpretation Rules
+
+1. A requirement marked **Proposed / To Verify** must not be described in the final project as confirmed product behavior until the application is actually exercised.
+2. A test case can exist for a proposed requirement; its execution result must remain **Not Executed** until evidence is collected.
+3. No API endpoint, database behavior, payment behavior, session timeout, or hidden business rule is assumed merely because it is common in e-commerce applications.
+4. When current application behavior differs from this baseline, the observed application behavior takes precedence and the requirement or test case should be updated.
+5. Test data should use dedicated test accounts and non-sensitive values.
+
+## 4. Requirement-to-Test Design
+
+`Requirement → Scenario → Test Case → Execution → Defect`
+
+This provides traceability without duplicating the same requirement text across every test case.
+
+
 ## Coverage Categories
 
 ### Authentication
