@@ -1,5 +1,5 @@
 # Practice Software Testing Toolshop
-# Requirements Specification — Day 2
+# Requirements Specification
 
 ## 1. Purpose
 
@@ -11,9 +11,9 @@ The project deliberately distinguishes:
 - **Proposed / To Verify** — a reasonable testable requirement that must be verified during execution before being treated as confirmed application behavior.
 - **Observed / To Verify** — part of the behavior is observable, but the complete behavior still requires execution.
 
-The current Toolshop registration page exposes first name, last name, date of birth, country, postal code, house number, street, city, state, phone, email and password inputs. It also documents password rules: minimum 8 characters, uppercase and lowercase letters, a number, and a special symbol. citeturn0search0
+The current Toolshop registration page exposes first name, last name, date of birth, country, postal code, house number, street, city, state, phone, email and password inputs. It also documents password rules: minimum 8 characters, uppercase and lowercase letters, a number, and a special symbol.
 
-The application is a demonstration application for software-testing training. citeturn0search1
+The application is a demonstration application for software-testing training.
 
 ## 2. Requirement Catalog
 
@@ -36,17 +36,3 @@ The requirement IDs are intentionally stable so Day 3 can map:
 
 This provides traceability without duplicating the same requirement text across every test case.
 
-## 5. Out of Scope for Day 2
-
-The following are not being implemented today:
-
-- Playwright automation
-- API automation
-- Database validation
-- CI/CD
-- Performance/load testing
-- Security penetration testing
-- Production database access
-- Production credentials
-
-Those activities belong to later days in the 14-day project plan.
