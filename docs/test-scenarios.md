@@ -1,5 +1,5 @@
 # Practice Software Testing Toolshop
-# Test Scenarios — Day 2
+# Test Scenarios
 
 ## Purpose
 
