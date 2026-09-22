@@ -117,5 +117,3 @@ Important failures should have appropriate evidence such as:
 ## 7. Scope Review
 
 Scope will be reviewed whenever significant application behavior is discovered during testing.
-
-The project must adapt to the current application rather than relying on outdated assumptions.
