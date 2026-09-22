@@ -12,7 +12,7 @@ The Practice Software Testing Toolshop is treated as a public demonstration/test
 
 ### A2 — Application Behavior Can Change
 
-The application may change during the 14-day project.
+The application may change during the project.
 
 Therefore, locators, workflows and documented behavior must be verified before automation.
 
@@ -48,7 +48,7 @@ External systems such as payment providers or email services are not assumed to 
 | Brittle selectors | High | Medium | Prefer stable Playwright locators |
 | Flaky tests | High | Medium | Use proper waits and diagnostics |
 | Excessive automation | Medium | Medium | Automate only high-value scenarios |
-| Scope becomes too large | High | Medium | Maintain 14-day scope |
+| Scope becomes too large | High | Medium | Maintain scope |
 | Lack of production DB access | Medium | High | Use local database demonstration |
 
 ## 4. Risk-Based Testing Principle
