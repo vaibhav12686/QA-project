@@ -21,8 +21,6 @@ The objective is to demonstrate practical skills across:
 - CI/CD
 - Test reporting
 
-The project is intentionally designed to be achievable within 14 days while maintaining realistic QA engineering practices.
-
 ## 2. Application Under Test
 
 Application:
